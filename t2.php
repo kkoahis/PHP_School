@@ -24,7 +24,7 @@
       <a href="XemthongtinPB.php" class="page-form" target="t3">Thông Tin Phòng Ban</a>
     </div>
     <div class="select-option__wrap">
-      <a href="form55.php" class="page-form" target="t3">Tìm Kiếm Nhân Viên</a>
+      <a href="timkiemNV.php" class="page-form" target="t3">Tìm Kiếm Nhân Viên</a>
     </div>
     <div class="select-option__wrap">
       <a href="timkiemPB.php" class="page-form" target="t3">Tìm Kiếm Phòng Ban</a>

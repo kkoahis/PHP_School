@@ -24,7 +24,7 @@ include('ConectDatabase.php');
 <body>
    <div class="container">
       <h2 class="title">TÌM KIẾM PHÒNG BAN</h2>
-      <form action="xulitimkiemPB.php" method="post">
+      <form action="xulitimkiemPB.php" method="post" name="form2">
          <div class="form-group">
             <lable>Nhập thông tin tìm kiếm:</lable>
             <input type="text" class="form-control" name="search" id="search" />
@@ -35,10 +35,17 @@ include('ConectDatabase.php');
                <option value="searchTenpb">Tìm Kiếm Theo Tên Phòng Ban</option>
             </select>
          </div>
-         <button name="btnTimkiemPB" class="btn btn-info">Tìm Kiếm</button>
-         
+         <button name="btnTimkiemPB" class="btn btn-info" onclick="checkLogin()">Tìm Kiếm</button>
       </form>
    </div>
 </body>
+<script>
+   function checkLogin() {
+      var keyUser = document.form2.search.value;
+      if (keyUser === "") {
+         window.alert("Xin hãy nhập giá trị tìm kiếm");
+      }
+   }
+</script>
 
 </html>

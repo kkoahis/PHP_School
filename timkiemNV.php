@@ -24,21 +24,28 @@ include('ConectDatabase.php');
 <body>
    <div class="container">
       <h2 class="title">TÌM KIẾM NHÂN VIÊN</h2>
-      <form action="xulitimkiemPB.php" method="post">
+      <form action="xulitimkiemNV.php" method="post" name="form2">
          <div class="form-group">
             <lable>Nhập thông tin tìm kiếm:</lable>
             <input type="text" class="form-control" name="search" id="search" />
          </div>
          <div class="form-group">
             <select name="optionSearch" class="custom-select">
-               <option value="searchMapb">Tìm Kiếm Theo Mã Nhân Viên</option>
-               <option value="searchTenpb">Tìm Kiếm Theo Tên Nhân Viên</option>
+               <option value="searchManv">Tìm Kiếm Theo Mã Nhân Viên</option>
+               <option value="searchTennv">Tìm Kiếm Theo Tên Nhân Viên</option>
             </select>
          </div>
-         <button name="btnTimkiemPB" class="btn btn-info">Tìm Kiếm</button>
-         
+         <button name="btnTimkiemNV" class="btn btn-info" onclick="checkLogin()">Tìm Kiếm</button>
       </form>
    </div>
 </body>
+<script>
+   function checkLogin() {
+      var keyUser = document.form2.search.value;
+      if (keyUser === "") {
+         window.alert("Xin hãy nhập giá trị tìm kiếm");
+      }
+   }
+</script>
 
 </html>
