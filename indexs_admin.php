@@ -14,7 +14,7 @@
   <frameset Border="0" rows="40, *, 90">
     <frame name="t1" src="t1.php"></frame>
     <frameset cols="245, *, 245">
-      <frame name="t2" src="t2_normal.php"></frame>
+      <frame name="t2" src="t2.php"></frame>
       <frame name="t3" src="t3.php"></frame>
       <frame name="t4" src="t4.php"></frame>
     </frameset>

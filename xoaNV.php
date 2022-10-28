@@ -2,6 +2,7 @@
 include('ConectDatabase.php');
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,7 @@ include('ConectDatabase.php');
    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-   <title>Thong Tin Phong Ban</title>
+   <title>Thong Tin Nhan Vien</title>
    <style>
       .title {
          margin-top: 20px;
@@ -23,33 +24,37 @@ include('ConectDatabase.php');
 
 <body>
    <div class="container">
-      <h2 class="title">Thông Tin Phòng Ban</h2>
+      <h2 class="title">Thông Tin Nhân Viên</h2>
       <table class="table table-hover">
          <thead>
             <tr>
+               <th>IDNV</th>
+               <th>Họ Tên</th>
                <th>IDPB</th>
-               <th>Tên Phòng Ban</th>
-               <th>Mô Tả</th>
+               <th>Địa Chỉ</th>
                <th>Thao Tác</th>
             </tr>
          </thead>
          <tbody>
             <?php
-            $rs = $conn->query("SELECT * FROM PHONGBAN");
+            $rs = $conn->query("SELECT * FROM NHANVIEN");
             while ($row = $rs->fetch_assoc()) :
             ?>
                <tr>
                   <td>
+                     <?php echo $row['IDNV'] ?>
+                  </td>
+                  <td>
+                     <?php echo $row['HoTen'] ?>
+                  </td>
+                  <td>
                      <?php echo $row['IDPB'] ?>
                   </td>
                   <td>
-                     <?php echo $row['TenPB'] ?>
+                     <?php echo $row['DiaChi'] ?>
                   </td>
                   <td>
-                     <?php echo $row['MoTa'] ?>
-                  </td>
-                  <td>
-                     <a class="btn btn-outline-primary" href="form_suaPB.php?sid= <?php echo $row['ID'] ?>">Chỉnh Sửa</a>
+                     <a onclick="return confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');" class="btn btn-outline-danger" href="xulixoaNV.php?sid=<?php echo $row['ID'] ?>">Xóa NV</a>
                   </td>
                </tr>
             <?php
@@ -61,5 +66,4 @@ include('ConectDatabase.php');
       </table>
    </div>
 </body>
-
 </html>

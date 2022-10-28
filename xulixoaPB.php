@@ -9,7 +9,7 @@ $queery = "DELETE FROM PHONGBAN WHERE ID = $id";
 
 if (mysqli_query($conn, $queery)) {
    // echo '<h1>Xóa Nhân Viên Thành Công</h1>';
-   header("location: XemthongtinPB.php");
+   header("location: xoaPB.php");
 } else {
    echo '<h1>Xóa Phòng Ban Không Thành Công, ' . mysqli_error($conn) . '</h1>';
 }

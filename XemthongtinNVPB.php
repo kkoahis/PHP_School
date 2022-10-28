@@ -31,12 +31,12 @@ include('ConectDatabase.php');
                <th>Họ Tên</th>
                <th>IDPB</th>
                <th>Địa Chỉ</th>
-               <th>Thao Tác</th>
+               <!-- <th>Thao Tác</th> -->
             </tr>
          </thead>
          <tab>
             <?php
-            $idNV = $_REQUEST['id'];
+            $idNV = $_REQUEST['sid'];
             $rs = $conn->query("SELECT * FROM NHANVIEN WHERE IDPB = '$idNV'");
             while ($row = $rs->fetch_assoc()) :
             ?>
@@ -53,10 +53,10 @@ include('ConectDatabase.php');
                   <td>
                      <?php echo $row['DiaChi'] ?>
                   </td>
-                  <td>
+                  <!-- <td>
                      <a class="btn btn-outline-primary" href="suaNV.php?sid= <?php echo $row['ID'] ?>">Chỉnh Sửa</a>
                      <a onclick="return confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');" class="btn btn-outline-danger" href="xulixoaNV.php?sid=<?php echo $row['ID'] ?>">Xóa NV</a>
-                  </td>
+                  </td> -->
                </tr>
             <?php
             endwhile;

@@ -46,7 +46,7 @@ $selected = $_POST['optionSearch'];
             if (isset($_POST['btnTimkempB']) || empty($search)) {
                exit;
             } else if ($selected  == 'searchMapb') {
-               $rs = $conn->query("SELECT * FROM PHONGBAN WHERE IDPB LIKE '%$search%'");
+               $rs = $conn->query("SELECT * FROM PHONGBAN WHERE IDPB = '$search'");
                while ($row = $rs->fetch_assoc()) {
             ?>
                   <tr>

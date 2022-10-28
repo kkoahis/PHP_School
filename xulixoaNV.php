@@ -9,7 +9,7 @@ $queery = "DELETE FROM NHANVIEN WHERE ID = $id";
 
 if (mysqli_query($conn, $queery)) {
    // echo '<h1>Xóa Nhân Viên Thành Công</h1>';
-   header("location: t3.php");
+   header("location: xoaNV.php");
 } else {
    echo '<h1>Xóa Nhân Viên Không Thành Công, ' . mysqli_error($conn) . '</h1>';
 }

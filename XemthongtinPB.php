@@ -31,7 +31,7 @@ include('ConectDatabase.php');
                <th>Tên Phòng Ban</th>
                <th>Mô Tả</th>
                <th>Thông Tin NVPB</th>
-               <th>Thao Tác</th>
+               <!-- <th>Thao Tác</th> -->
             </tr>
          </thead>
          <tbody>
@@ -50,12 +50,12 @@ include('ConectDatabase.php');
                      <?php echo $row['MoTa'] ?>
                   </td>
                   <td>
-                  <a href="XemthongtinNVPB.php?id=<?php echo$row['IDPB']?>" class="btn btn-outline-info btn-block">Chi Tiết</a>
+                     <a href="XemthongtinNVPB.php?sid=<?php echo $row['IDPB'] ?>" class="btn btn-outline-info btn-block">Chi Tiết</a>
                   </td>
-                  <td>
+                  <!-- <td>
                      <a class="btn btn-outline-primary" href="suaPB.php?sid= <?php echo $row['ID'] ?>">Chỉnh Sửa</a>
-                     <a onclick="return confirm('Bạn có chắc chắn muốn xóa phòng ban này không?');" class="btn btn-outline-danger" href="xulixoaPB.php?sid=<?php echo $row['ID']?>">Xóa PB</a>
-                  </td>
+                     <a onclick="return confirm('Bạn có chắc chắn muốn xóa phòng ban này không?');" class="btn btn-outline-danger" href="xulixoaPB.php?sid=<?php echo $row['ID'] ?>">Xóa PB</a>
+                  </td> -->
                </tr>
             <?php
             endwhile;

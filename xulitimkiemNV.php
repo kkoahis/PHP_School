@@ -49,7 +49,7 @@ $selected = $_POST['optionSearch'];
             if (isset($_POST['btnTimkemNV']) || empty($search)) {
                exit;
             } else if ($selected  == 'searchManv') {
-               $rs = $conn->query("SELECT * FROM NHANVIEN WHERE IDNV LIKE '%$search%'");
+               $rs = $conn->query("SELECT * FROM NHANVIEN WHERE IDNV = '$search'");
                while ($row = $rs->fetch_assoc()) {
             ?>
                   <tr>

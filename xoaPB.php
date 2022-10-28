@@ -49,7 +49,7 @@ include('ConectDatabase.php');
                      <?php echo $row['MoTa'] ?>
                   </td>
                   <td>
-                     <a class="btn btn-outline-primary" href="form_suaPB.php?sid= <?php echo $row['ID'] ?>">Chỉnh Sửa</a>
+                     <a href="xulixoaPB.php?sid=<?php echo $row['ID'] ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa phòng ban này không?');" class="btn btn-outline-danger" >Xóa PB</a>
                   </td>
                </tr>
             <?php
