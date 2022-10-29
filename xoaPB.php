@@ -22,44 +22,52 @@ include('ConectDatabase.php');
 </head>
 
 <body>
-   <div class="container">
-      <h2 class="title">Thông Tin Phòng Ban</h2>
-      <table class="table table-hover">
-         <thead>
-            <tr>
-               <th>IDPB</th>
-               <th>Tên Phòng Ban</th>
-               <th>Mô Tả</th>
-               <th>Thao Tác</th>
-            </tr>
-         </thead>
-         <tbody>
-            <?php
-            $rs = $conn->query("SELECT * FROM PHONGBAN");
-            while ($row = $rs->fetch_assoc()) :
-            ?>
+   <form action="xulixoaPB.php" method="post">
+      <div class="container">
+         <h2 class="title">Xóa Phòng Ban</h2>
+         <table class="table table-hover">
+            <thead>
                <tr>
-                  <td>
-                     <?php echo $row['IDPB'] ?>
-                  </td>
-                  <td>
-                     <?php echo $row['TenPB'] ?>
-                  </td>
-                  <td>
-                     <?php echo $row['MoTa'] ?>
-                  </td>
-                  <td>
-                     <a href="xulixoaPB.php?sid=<?php echo $row['ID'] ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa phòng ban này không?');" class="btn btn-outline-danger" >Xóa PB</a>
-                  </td>
+                  <th>IDPB</th>
+                  <th>Tên Phòng Ban</th>
+                  <th>Mô Tả</th>
+                  <th>Thao Tác</th>
                </tr>
-            <?php
-            endwhile;
-            mysqli_free_result($rs);
-            mysqli_close($conn);
-            ?>
-         </tbody>
-      </table>
-   </div>
+            </thead>
+            <tbody>
+               <?php
+               $rs = $conn->query("SELECT * FROM PHONGBAN");
+               while ($row = $rs->fetch_assoc()) :
+                  $id = $row['ID'];
+               ?>
+                  <tr>
+                     <td>
+                        <?php echo $row['IDPB'] ?>
+                     </td>
+                     <td>
+                        <?php echo $row['TenPB'] ?>
+                     </td>
+                     <td>
+                        <?php echo $row['MoTa'] ?>
+                     </td>
+                     <td>
+                        <div class="form-check">
+                           <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" value="<?= $id ?>" name="delete[]">Chọn
+                           </label>
+                        </div>
+                     </td>
+                  </tr>
+               <?php
+               endwhile;
+               mysqli_free_result($rs);
+               mysqli_close($conn);
+               ?>
+            </tbody>
+         </table>
+         <button onclick="return confirm('Bạn có chắc chắn muốn xóa phòng ban này không?');" class="btn btn-outline-danger btn-block" name="but_delete">Xóa Phòng Ban</button>
+      </div>
+   </form>
 </body>
 
 </html>

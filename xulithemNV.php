@@ -25,8 +25,11 @@ $querry = "INSERT INTO NHANVIEN (IDNV, HoTen, IDPB, DiaChi) VALUES ('$maNV', '$t
 if (mysqli_query($conn, $querry)) {
    // nếu thành công thì chuyển đến file indexs.php
    // echo "<h1>them thanh cong</h1>";
-   header('location: xemthongtinNV.php');
+   header('location: XemthongtinNV.php');
 } else {
    $result = "<br><br>Lỗi thêm mới Phòng Ban " . mysqli_error($conn);
-   echo $result;
+   echo $result.'<br><br>';
 }
+?>
+<button type="button" class="btn btn-secondary" onclick="history.back()">BACK</button>
+

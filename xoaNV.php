@@ -23,47 +23,57 @@ include('ConectDatabase.php');
 </head>
 
 <body>
-   <div class="container">
-      <h2 class="title">Thông Tin Nhân Viên</h2>
-      <table class="table table-hover">
-         <thead>
-            <tr>
-               <th>IDNV</th>
-               <th>Họ Tên</th>
-               <th>IDPB</th>
-               <th>Địa Chỉ</th>
-               <th>Thao Tác</th>
-            </tr>
-         </thead>
-         <tbody>
-            <?php
-            $rs = $conn->query("SELECT * FROM NHANVIEN");
-            while ($row = $rs->fetch_assoc()) :
-            ?>
+   <form action="xulixoaNV.php" method="post">
+      <div class="container">
+         <h2 class="title">Xóa Nhân Viên</h2>
+         <table class="table table-hover">
+            <thead>
                <tr>
-                  <td>
-                     <?php echo $row['IDNV'] ?>
-                  </td>
-                  <td>
-                     <?php echo $row['HoTen'] ?>
-                  </td>
-                  <td>
-                     <?php echo $row['IDPB'] ?>
-                  </td>
-                  <td>
-                     <?php echo $row['DiaChi'] ?>
-                  </td>
-                  <td>
-                     <a onclick="return confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');" class="btn btn-outline-danger" href="xulixoaNV.php?sid=<?php echo $row['ID'] ?>">Xóa NV</a>
-                  </td>
+                  <th>IDNV</th>
+                  <th>Họ Tên</th>
+                  <th>IDPB</th>
+                  <th>Địa Chỉ</th>
+                  <th>Thao Tác</th>
                </tr>
-            <?php
-            endwhile;
-            mysqli_free_result($rs);
-            mysqli_close($conn);
-            ?>
-         </tbody>
-      </table>
-   </div>
+            </thead>
+            <tbody>
+               <?php
+               $rs = $conn->query("SELECT * FROM NHANVIEN");
+               while ($row = $rs->fetch_assoc()) :
+                  $id = $row['ID'];
+               ?>
+                  <tr>
+                     <td>
+                        <?php echo $row['IDNV'] ?>
+                     </td>
+                     <td>
+                        <?php echo $row['HoTen'] ?>
+                     </td>
+                     <td>
+                        <?php echo $row['IDPB'] ?>
+                     </td>
+                     <td>
+                        <?php echo $row['DiaChi'] ?>
+                     </td>
+                     <td>
+                        <div class="form-check">
+                           <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" value="<?= $id ?>" name="delete[]">Chọn
+                           </label>
+                        </div>
+                     </td>
+                  </tr>
+               <?php
+               endwhile;
+               mysqli_free_result($rs);
+               mysqli_close($conn);
+               ?>
+            </tbody>
+         </table>
+         <button onclick="return confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');" class="btn btn-outline-danger btn-block" name="but_delete">Xóa Nhân Viên</button>
+      </div>
+   </form>
+
 </body>
+
 </html>

@@ -33,6 +33,7 @@ include('ConectDatabase.php');
             <select name="optionSearch" class="custom-select">
                <option value="searchManv">Tìm Kiếm Theo Mã Nhân Viên</option>
                <option value="searchTennv">Tìm Kiếm Theo Tên Nhân Viên</option>
+               <option value="searchDiachinv">Tìm Kiếm Theo Địa Chỉ Nhân Viên</option>
             </select>
          </div>
          <button name="btnTimkiemNV" class="btn btn-info" onclick="checkLogin()">Tìm Kiếm</button>

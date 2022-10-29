@@ -23,7 +23,7 @@ include('ConectDatabase.php');
 
 <body>
    <div class="container">
-      <h2 class="title">Thông Tin Phòng Ban</h2>
+      <h2 class="title">Cập Nhật Thông Tin Phòng Ban</h2>
       <table class="table table-hover">
          <thead>
             <tr>

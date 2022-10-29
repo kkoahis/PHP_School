@@ -16,9 +16,9 @@ II. Bài tập áp dụng:
       + Xem thông tin PB.PHP: cho phép xem thông tin của PhongBan và liệt kê tất cả nhân viên theo từng phòng ban -- done
 
    - Khi đăng nhập vào hệ thống:
-      + Chèn thông tin bảng NhanVien 
+      + Chèn thông tin bảng NhanVien -- done
       + Chèn thông tin bảng PhongBan -- done
       + Cập nhật lại hệ thống tin bảng PhongBan -- done
       + Xóa, xóa tất cả các nhân viên của bảng NhanVien, PhongBan -- done
    - Khi không đăng nhập vào hệ thống:
-      + Không có các form trên
+      + Không có các form trên   -- done

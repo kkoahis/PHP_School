@@ -89,8 +89,30 @@ $selected = $_POST['optionSearch'];
             <?php
                }
             }
-            ?>
 
+            else if ($selected  == 'searchDiachinv') {
+               $rs = $conn->query("SELECT * FROM NHANVIEN WHERE DiaChi LIKE '%$search%'");
+               while ($row = $rs->fetch_assoc()) {
+               ?>
+                  <tr>
+                     <td>
+                        <?php echo $row['IDNV'] ?>
+                     </td>
+                     <td>
+                        <?php echo $row['HoTen'] ?>
+                     </td>
+                     <td>
+                        <?php echo $row['IDPB'] ?>
+                     </td>
+                     <td>
+                        <?php echo $row['DiaChi'] ?>
+                     </td>
+                  </tr>
+            <?php
+               }
+            }
+            ?>
+            
             <?php
             mysqli_free_result($rs);
             mysqli_close($conn);

@@ -36,7 +36,7 @@
       <a href="themPB.php" class="page-form" target="t3">Thêm Phòng Ban</a>
     </div>
     <div class="select-option__wrap">
-      <a href=".php" class="page-form" target="t3">Cập Nhật Nhân Viên</a>
+      <a href="suaNV.php" class="page-form" target="t3">Cập Nhật Nhân Viên</a>
     </div>
     <div class="select-option__wrap">
       <a href="suaPB.php" class="page-form" target="t3">Cập Nhật Phòng Ban</a>

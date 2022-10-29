@@ -1,15 +1,16 @@
 <?php
 include('ConectDatabase.php');
 
-// lấy giá trị cần phải xóa (IDNV)
-$id = $_GET['sid'];
+if (isset($_POST['but_delete'])) {
 
-$queery = "DELETE FROM NHANVIEN WHERE ID = $id";
-// echo $queery;
-
-if (mysqli_query($conn, $queery)) {
-   // echo '<h1>Xóa Nhân Viên Thành Công</h1>';
-   header("location: xoaNV.php");
-} else {
-   echo '<h1>Xóa Nhân Viên Không Thành Công, ' . mysqli_error($conn) . '</h1>';
+   if (isset($_POST['delete'])) {
+      foreach ($_POST['delete'] as $deleteid) {
+         $deleteUser = "DELETE from NHANVIEN WHERE ID =" . $deleteid;
+         mysqli_query($conn, $deleteUser);
+         header('location: xoaNV.php');
+      }
+   }
+   else{
+      header('location: xoaNV.php');
+   }
 }

@@ -32,9 +32,12 @@ $querry = "INSERT INTO PHONGBAN (IDPB, TenPB, MoTa) VALUES ('$maPB', '$tenPB', '
 
 if (mysqli_query($conn, $querry)) {
    // nếu thành công thì chuyển đến file indexs.php
-   echo "<h1>them thanh cong</h1>";
-   // header('location: themPB.php');
+   // echo "<h1>them thanh cong</h1>";
+   header('location: XemthongtinPB.php');
 } else {
    $result = "<br><br>Lỗi thêm mới Phòng Ban " . mysqli_error($conn);
-   echo $result;
+   echo $result.'<br><br>';
 }
+?>
+<button type="button" class="btn btn-secondary" onclick="history.back()">BACK</button>
+
