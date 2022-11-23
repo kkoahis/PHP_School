@@ -1,16 +1,13 @@
 <?php
 include('ConectDatabase.php');
 
-if (isset($_POST['but_delete'])) {
+$myID = $_REQUEST['IDPB'];
 
-   if (isset($_POST['delete'])) {
-      foreach ($_POST['delete'] as $deleteid) {
-         $deleteUser = "DELETE from PHONGBAN WHERE ID =" . $deleteid;
-         mysqli_query($conn, $deleteUser);
-         header('location: xoaPB.php');
-      }
-   }
-   else{
-      header('location: xoaPB.php');
-   }
+$rs = mysqli_query($conn, "SELECT IDPB FROM PHONGBAN");
+
+while ($row = mysqli_fetch_array($rs, MYSQLI_BOTH)) {
+   $myID = $_REQUEST[$row['IDPB']];
+   $rs_delete = mysqli_query($conn, "DELETE FROM PHONGBAN WHERE IDPB = '$myID'");
 }
+
+header('location: xoaPB.php');

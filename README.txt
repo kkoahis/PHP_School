@@ -10,7 +10,7 @@ II. Bài tập áp dụng:
       + Tạo bảng: NhanVien(IDNV, HoTen, IDPB, DiaChi) -- done
       + Tạo bảng: PhongBan(IDPB, TenPB, MoTa)   -- done
       + Tạo bảng: Admin(ID, Username, Password) -- done
-   
+
    - Viết các trang: 
       + Xem thông tin NV.PHP: cho phép xem tất cả thông tin nhân viên bảng NhanVien --> (liên kết) Gọi đến trang XemthongtinNVPB.PHP -- done
       + Xem thông tin PB.PHP: cho phép xem thông tin của PhongBan và liệt kê tất cả nhân viên theo từng phòng ban -- done
@@ -19,6 +19,12 @@ II. Bài tập áp dụng:
       + Chèn thông tin bảng NhanVien -- done
       + Chèn thông tin bảng PhongBan -- done
       + Cập nhật lại hệ thống tin bảng PhongBan -- done
-      + Xóa, xóa tất cả các nhân viên của bảng NhanVien, PhongBan -- done
+      + Xóa, xóa tất cả các nhân viên của bảng NhanVien, PhongBan
+      
    - Khi không đăng nhập vào hệ thống:
       + Không có các form trên   -- done
+
+
+
+
+   

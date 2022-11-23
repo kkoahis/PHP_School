@@ -38,7 +38,7 @@ include('ConectDatabase.php');
                <?php
                $rs = $conn->query("SELECT * FROM PHONGBAN");
                while ($row = $rs->fetch_assoc()) :
-                  $id = $row['ID'];
+                  // $id = $row['ID'];
                ?>
                   <tr>
                      <td>
@@ -53,7 +53,7 @@ include('ConectDatabase.php');
                      <td>
                         <div class="form-check">
                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" value="<?= $id ?>" name="delete[]">Chọn
+                              <input type="checkbox" class="form-check-input" name="<?php echo $row['IDPB'] ?>" value="<?php echo $row['IDPB']?>">Chọn PB
                            </label>
                         </div>
                      </td>
@@ -65,7 +65,7 @@ include('ConectDatabase.php');
                ?>
             </tbody>
          </table>
-         <button onclick="return confirm('Bạn có chắc chắn muốn xóa phòng ban này không?');" class="btn btn-outline-danger btn-block" name="but_delete">Xóa Phòng Ban</button>
+         <button onclick="return confirm('Bạn có chắc chắn muốn xóa phòng ban này không?');" class="btn btn-outline-danger btn-block" >Xóa Phòng Ban</button>
       </div>
    </form>
 </body>

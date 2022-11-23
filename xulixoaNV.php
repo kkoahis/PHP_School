@@ -1,16 +1,15 @@
 <?php
 include('ConectDatabase.php');
 
-if (isset($_POST['but_delete'])) {
+$myID = $_REQUEST['IDNV'];
+var_dump($_REQUEST);
 
-   if (isset($_POST['delete'])) {
-      foreach ($_POST['delete'] as $deleteid) {
-         $deleteUser = "DELETE from NHANVIEN WHERE ID =" . $deleteid;
-         mysqli_query($conn, $deleteUser);
-         header('location: xoaNV.php');
-      }
-   }
-   else{
-      header('location: xoaNV.php');
-   }
+$rs = mysqli_query($conn, "SELECT IDNV FROM NHANVIEN");
+
+while ($row = mysqli_fetch_array($rs, MYSQLI_BOTH)) {
+   $myID = $_REQUEST[$row['IDNV']];
+   $rs_delete = mysqli_query($conn, "DELETE FROM NHANVIEN WHERE IDNV = '$myID'");
 }
+var_dump($rs_delete);
+
+header('location: xoaNV.php');

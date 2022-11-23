@@ -11,15 +11,8 @@ if ($tk == '' || $mk == '') {
       select * from ADMIN where Username = '$tk' and Password = '$mk'
    ");
 
-   if (mysqli_num_rows($rows) == 0) {
-      header("location: form11.php");
-   } else {
-?>
-      <script type="text/javascript">
-         // window.open("../TruyXuatDuLieu/indexs_admin.php");
-         window.open("http://localhost:8080/truyXuatDuLieu/indexs_admin.php");
-      </script>
-<?php
+   if (mysqli_num_rows($rows) == 1) {
+      header("location: indexs_admin.php");
    }
 }
 ?>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/styleT2.css" />
+  <link rel="stylesheet" href="css/styleT2_admin.css" />
   <title>T2</title>
 </head>
 
@@ -13,9 +13,6 @@
   <div class="select-option">
     <div class="select-option__wrap">
       <a href="t3.php" target="t3" class="home-page">Trang Chủ</a>
-    </div>
-    <div class="select-option__wrap">
-      <a href="form11.php" class="page-form" target="t3">Đăng Nhập</a>
     </div>
     <div class="select-option__wrap">
       <a href="XemthongtinNV.php" class="page-form" target="t3">Thông Tin Nhân Viên</a>
@@ -46,6 +43,9 @@
     </div>
     <div class="select-option__wrap">
       <a href="xoaPB.php" class="page-form" target="t3">Xóa Phòng Ban</a>
+    </div>
+    <div class="select-option__wrap">
+      <a href="dangxuat.php" class="page-form" target="_top">Đăng Xuất</a>
     </div>
   </div>
 </body>

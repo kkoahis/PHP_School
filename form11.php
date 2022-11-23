@@ -33,7 +33,7 @@ include('ConectDatabase.php');
 </head>
 
 <body bgcolor="BBFFCC">
-  <form action="xulilogin.php" name="form2" method="post">
+  <form action="xulilogin.php" name="form2" method="post" target="_top">
     <div class="container">
       <table border="0" class="table-form1">
         <caption>

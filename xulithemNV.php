@@ -27,7 +27,7 @@ if (mysqli_query($conn, $querry)) {
    // echo "<h1>them thanh cong</h1>";
    header('location: XemthongtinNV.php');
 } else {
-   $result = "<br><br>Lỗi thêm mới Phòng Ban " . mysqli_error($conn);
+   $result = "<br><br>Lỗi thêm mới Phòng Ban (Chưa chọn phòng ban, ...)" . mysqli_error($conn);
    echo $result.'<br><br>';
 }
 ?>

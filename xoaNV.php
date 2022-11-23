@@ -40,7 +40,7 @@ include('ConectDatabase.php');
                <?php
                $rs = $conn->query("SELECT * FROM NHANVIEN");
                while ($row = $rs->fetch_assoc()) :
-                  $id = $row['ID'];
+                  // $id = $row['ID'];
                ?>
                   <tr>
                      <td>
@@ -58,19 +58,17 @@ include('ConectDatabase.php');
                      <td>
                         <div class="form-check">
                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" value="<?= $id ?>" name="delete[]">Chọn
+                              <input type="checkbox" class="form-check-input" name="<?php echo $row["IDNV"] ?>" value="<?php echo $row["IDNV"] ?>"> Chọn NV
                            </label>
                         </div>
                      </td>
                   </tr>
                <?php
                endwhile;
-               mysqli_free_result($rs);
-               mysqli_close($conn);
                ?>
             </tbody>
          </table>
-         <button onclick="return confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');" class="btn btn-outline-danger btn-block" name="but_delete">Xóa Nhân Viên</button>
+         <button onclick="return confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');" class="btn btn-outline-danger btn-block">Xóa Nhân Viên</button>
       </div>
    </form>
 

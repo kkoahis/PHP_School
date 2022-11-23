@@ -43,7 +43,7 @@ $row = mysqli_fetch_assoc($rs);
          <input type="hidden" name="sid" id="sid" value="<?php echo $row['ID'] ?>" >
          <div class="form-group">
             <lable for="idpb">Mã Phòng Ban</lable>
-            <input type="text" class="form-control" name="idpb" id="idpb" value="<?php echo $row['IDPB'] ?>" disabled/>
+            <input type="text" class="form-control" name="idpb" id="idpb" value="<?php echo $row['IDPB'] ?>" readonly/>
          </div>
          <div class="form-group">
             <lable for="tenpb">Tên Phòng Ban</lable>
